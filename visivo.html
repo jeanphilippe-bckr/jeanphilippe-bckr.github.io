@@ -22,6 +22,10 @@ nav.scrolled{background:rgba(10,10,10,0.95);backdrop-filter:blur(12px);border-bo
 .nav-links a::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:1px;background:var(--orange);transition:width 0.3s;}
 .nav-links a:hover{color:var(--white);}
 .nav-links a:hover::after{width:100%;}
+.lang-toggle{display:flex;align-items:center;gap:2px;margin-left:1.5rem;border-left:1px solid var(--border);padding-left:1.5rem;}
+.lang-btn{background:none;border:none;font-family:'DM Sans',sans-serif;font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);cursor:none;padding:4px 8px;border-radius:3px;transition:all 0.2s;}
+.lang-btn:hover{color:var(--white);}
+.lang-btn.active{background:var(--orange);color:var(--black);font-weight:700;}
 .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:3rem;padding-bottom:5rem;position:relative;overflow:hidden;}
 .hero-bg-num{position:absolute;right:-2rem;top:50%;transform:translateY(-50%);font-family:'Syne',sans-serif;font-size:clamp(18rem,28vw,34rem);font-weight:800;color:rgba(255,92,58,0.04);line-height:1;pointer-events:none;user-select:none;animation:bgFloat 8s ease-in-out infinite;}
 @keyframes bgFloat{0%,100%{transform:translateY(-50%);}50%{transform:translateY(-52%);}}
@@ -300,22 +304,27 @@ footer{padding:2rem 3rem;display:flex;align-items:center;justify-content:space-b
     <span class="nav-wordmark">Visivo</span>
   </a>
   <div class="nav-links">
-    <a href="#work">Work</a><a href="#services">Services</a><a href="#about">About</a><a href="#contact">Contact</a>
+    <a href="#work" data-i18n="nav.work">Work</a><a href="#services" data-i18n="nav.services">Services</a><a href="#about" data-i18n="nav.about">About</a><a href="#contact" data-i18n="nav.contact">Contact</a>
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" onclick="setLang('fr')">FR</button>
+      <button class="lang-btn" onclick="setLang('de')">DE</button>
+    </div>
   </div>
 </nav>
 
 <section class="hero">
   <div class="hero-bg-num">V</div>
   <div class="hero-top-bar">
-    <span class="hero-top-label">Web Design Studio · Available Worldwide</span>
-    <div style="display:flex;align-items:center;gap:0.75rem;"><div class="hero-top-dot"></div><span class="hero-top-label">Available for projects</span></div>
+    <span class="hero-top-label" data-i18n="hero.available">Web Design Studio · Available Worldwide</span>
+    <div style="display:flex;align-items:center;gap:0.75rem;"><div class="hero-top-dot"></div><span class="hero-top-label" data-i18n="hero.status">Available for projects</span></div>
   </div>
   <div class="hero-content">
-    <p class="hero-eyebrow">Visivo · JP · Web Design</p>
-    <h1 class="hero-title">Your business<br><span class="line2">deserves to be</span><br><span class="accent">seen.</span></h1>
+    <p class="hero-eyebrow" data-i18n="hero.eyebrow">Visivo · JP · Web Design</p>
+    <h1 class="hero-title"><span data-i18n="hero.line1">Your business</span><br><span class="line2" data-i18n="hero.line2">deserves to be</span><br><span class="accent" data-i18n="hero.line3">seen.</span></h1>
     <div class="hero-bottom">
-      <p class="hero-desc">I build <strong>fast, beautiful websites</strong> for small businesses that are invisible online — and turn them into something their customers actually find.</p>
-      <div class="hero-scroll"><div class="scroll-bar"></div>Scroll</div>
+      <p class="hero-desc" data-i18n="hero.desc">I build <strong>fast, beautiful websites</strong> for small businesses that are invisible online — and turn them into something their customers actually find.</p>
+      <div class="hero-scroll"><div class="scroll-bar"></div><span data-i18n="hero.scroll">Scroll</span></div>
     </div>
   </div>
 </section>
@@ -329,22 +338,22 @@ footer{padding:2rem 3rem;display:flex;align-items:center;justify-content:space-b
 <section class="intro">
   <div class="reveal-left">
     <div class="intro-num">01</div>
-    <span class="intro-label">The problem</span>
-    <h2 class="intro-title">Great businesses, invisible online.</h2>
-    <p class="intro-body">Thousands of restaurants, florists, contractors and artisans do outstanding work every day — but they're impossible to find online.</p>
-    <p class="intro-body">That's where Visivo comes in. I research, design and deliver a professional website tailored to your business — fast, personal, no agency overhead.</p>
+    <span class="intro-label" data-i18n="intro.label">The problem</span>
+    <h2 class="intro-title" data-i18n="intro.title">Great businesses, invisible online.</h2>
+    <p class="intro-body" data-i18n="intro.body1">Thousands of restaurants, florists, contractors and artisans do outstanding work every day — but they're impossible to find online.</p>
+    <p class="intro-body" data-i18n="intro.body2">That's where Visivo comes in. I research, design and deliver a professional website tailored to your business — fast, personal, no agency overhead.</p>
   </div>
   <div class="reveal" style="display:flex;flex-direction:column;gap:3rem;justify-content:center;">
-    <div class="intro-stat"><span class="stat-n">72%</span><div class="stat-l">of customers research online before visiting a local business</div></div>
-    <div class="intro-stat"><span class="stat-n">46%</span><div class="stat-l">of all Google searches are looking for local information</div></div>
-    <div class="intro-stat"><span class="stat-n">∞</span><div class="stat-l">potential reach when your business is properly visible online</div></div>
+    <div class="intro-stat"><span class="stat-n">72%</span><div class="stat-l" data-i18n="intro.stat1">of customers research online before visiting a local business</div></div>
+    <div class="intro-stat"><span class="stat-n">46%</span><div class="stat-l" data-i18n="intro.stat2">of all Google searches are looking for local information</div></div>
+    <div class="intro-stat"><span class="stat-n">∞</span><div class="stat-l" data-i18n="intro.stat3">potential reach when your business is properly visible online</div></div>
   </div>
 </section>
 
 <section class="work" id="work">
   <div class="work-header reveal">
-    <h2 class="work-title">Selected<br>work</h2>
-    <p class="work-sub">Click any project to explore the full site. Each one is built from scratch for a different industry.</p>
+    <h2 class="work-title" data-i18n="work.title">Selected<br>work</h2>
+    <p class="work-sub" data-i18n="work.sub">Click any project to explore the full site. Each one is built from scratch for a different industry.</p>
   </div>
   <div class="projects">
     <div class="project reveal" onclick="openPreview(&quot;restaurant&quot;,&quot;Maison Brûlée&quot;,&quot;Restaurant · Fine Dining&quot;)">
@@ -412,30 +421,30 @@ footer{padding:2rem 3rem;display:flex;align-items:center;justify-content:space-b
 
 <section class="services" id="services">
   <div class="services-header reveal">
-    <span class="services-label">What I offer</span>
-    <h2 class="services-title">How I<br><span class="ghost">can help</span></h2>
+    <span class="services-label" data-i18n="services.label">What I offer</span>
+    <h2 class="services-title" data-i18n="services.title">How I<br><span class="ghost">can help</span></h2>
   </div>
   <div class="service-list">
-    <div class="service-item reveal" onclick="openPanel('design')"><span class="service-n">01</span><h3 class="service-name">Website Design & Build</h3><p class="service-desc">A fully custom, professional website built from scratch. No templates, no compromise.</p><div class="service-arrow">→</div></div>
-    <div class="service-item reveal" onclick="openPanel('content')"><span class="service-n">02</span><h3 class="service-name">Content & Copywriting</h3><p class="service-desc">I write all the text for you — services, about, contact — in French, English or Dutch.</p><div class="service-arrow">→</div></div>
-    <div class="service-item reveal" onclick="openPanel('hosting')"><span class="service-n">03</span><h3 class="service-name">Domain & Hosting Setup</h3><p class="service-desc">I handle everything technical — domain, hosting, going live. You just receive a working site.</p><div class="service-arrow">→</div></div>
-    <div class="service-item reveal" onclick="openPanel('maintenance')"><span class="service-n">04</span><h3 class="service-name">Ongoing Maintenance</h3><p class="service-desc">Need updates, new photos or seasonal changes? Maintenance plans are available.</p><div class="service-arrow">→</div></div>
+    <div class="service-item reveal" onclick="openPanel('design')"><span class="service-n">01</span><h3 class="service-name" data-i18n="s1.name">Website Design & Build</h3><p class="service-desc" data-i18n="s1.desc">A fully custom, professional website built from scratch. No templates, no compromise.</p><div class="service-arrow">→</div></div>
+    <div class="service-item reveal" onclick="openPanel('content')"><span class="service-n">02</span><h3 class="service-name" data-i18n="s2.name">Content & Copywriting</h3><p class="service-desc" data-i18n="s2.desc">I write all the text for you — services, about, contact — in French, English or Dutch.</p><div class="service-arrow">→</div></div>
+    <div class="service-item reveal" onclick="openPanel('hosting')"><span class="service-n">03</span><h3 class="service-name" data-i18n="s3.name">Domain & Hosting Setup</h3><p class="service-desc" data-i18n="s3.desc">I handle everything technical — domain, hosting, going live. You just receive a working site.</p><div class="service-arrow">→</div></div>
+    <div class="service-item reveal" onclick="openPanel('maintenance')"><span class="service-n">04</span><h3 class="service-name" data-i18n="s4.name">Ongoing Maintenance</h3><p class="service-desc" data-i18n="s4.desc">Need updates, new photos or seasonal changes? Maintenance plans are available.</p><div class="service-arrow">→</div></div>
   </div>
 </section>
 
 <section class="about" id="about">
   <div class="reveal-left" style="position:relative;">
     <div class="about-big-j">JP</div>
-    <span class="about-label">Who's behind Visivo</span>
-    <h2 class="about-title">I find you.<br>I build it.<br>You get clients.</h2>
-    <p class="about-body">I'm JP — I work remotely and serve businesses anywhere in the world, from France to the Netherlands to wherever you are.</p>
-    <p class="about-body">I don't wait for you to come to me. I find businesses doing great work that nobody can find online, build them a first draft, and show them what's possible.</p>
+    <span class="about-label" data-i18n="about.label">Who's behind Visivo</span>
+    <h2 class="about-title" data-i18n="about.title">I find you.<br>I build it.<br>You get clients.</h2>
+    <p class="about-body" data-i18n="about.body1">I'm JP — I work remotely and serve businesses anywhere in the world, from France to the Netherlands to wherever you are.</p>
+    <p class="about-body" data-i18n="about.body2">I don't wait for you to come to me. I find businesses doing great work that nobody can find online, build them a first draft, and show them what's possible.</p>
   </div>
   <div class="reveal">
-    <div class="about-card"><h4 class="about-card-title">Fast turnaround</h4><p class="about-card-body">First draft within days. You see something real before committing to anything.</p></div>
-    <div class="about-card"><h4 class="about-card-title">100% custom</h4><p class="about-card-body">Every site built specifically for your business. Your colours, your tone, nothing generic.</p></div>
-    <div class="about-card"><h4 class="about-card-title">Based online, available everywhere</h4><p class="about-card-body">I work remotely and collaborate with clients across France, Belgium, the Netherlands and beyond.</p></div>
-    <div class="about-card"><h4 class="about-card-title">One person, full accountability</h4><p class="about-card-body">You deal with me directly from start to finish. No hand-offs, no gaps.</p></div>
+    <div class="about-card"><h4 class="about-card-title" data-i18n="ac1.title">Fast turnaround</h4><p class="about-card-body" data-i18n="ac1.body">First draft within days. You see something real before committing to anything.</p></div>
+    <div class="about-card"><h4 class="about-card-title" data-i18n="ac2.title">100% custom</h4><p class="about-card-body" data-i18n="ac2.body">Every site built specifically for your business. Your colours, your tone, nothing generic.</p></div>
+    <div class="about-card"><h4 class="about-card-title" data-i18n="ac3.title">Based online, available everywhere</h4><p class="about-card-body" data-i18n="ac3.body">I work remotely and collaborate with clients across France, Belgium, the Netherlands and beyond.</p></div>
+    <div class="about-card"><h4 class="about-card-title" data-i18n="ac4.title">One person, full accountability</h4><p class="about-card-body" data-i18n="ac4.body">You deal with me directly from start to finish. No hand-offs, no gaps.</p></div>
   </div>
 </section>
 
@@ -443,18 +452,18 @@ footer{padding:2rem 3rem;display:flex;align-items:center;justify-content:space-b
   <div class="contact-bg-text">VISIVO</div>
   <div class="contact-inner">
     <div class="reveal-left">
-      <span class="contact-label">Get in touch</span>
-      <h2 class="contact-title">Let's talk<br>about your<br>business.</h2>
-      <p class="contact-body">Tell me about your business and what you're looking for. I'll come back to you quickly.</p>
-      <div class="contact-note">Interested in ongoing updates? <strong>Maintenance plans</strong> are available — just mention it in your message.</div>
+      <span class="contact-label" data-i18n="contact.label">Get in touch</span>
+      <h2 class="contact-title" data-i18n="contact.title">Let's talk<br>about your<br>business.</h2>
+      <p class="contact-body" data-i18n="contact.body">Tell me about your business and what you're looking for. I'll come back to you quickly.</p>
+      <div class="contact-note" data-i18n="contact.note">Interested in ongoing updates? <strong>Maintenance plans</strong> are available — just mention it in your message.</div>
     </div>
     <div class="reveal">
       <form class="form">
-        <div class="form-field"><label class="form-label">Your name</label><input type="text" placeholder="Jean Dupont"></div>
-        <div class="form-field"><label class="form-label">Email</label><input type="email" placeholder="hello@yourbusiness.com"></div>
-        <div class="form-field"><label class="form-label">Business type</label><select><option value="" disabled selected>Select your industry</option><option>Restaurant / Food & Drink</option><option>Beauty / Hair / Wellness</option><option>Florist / Boutique</option><option>Contractor / Tradesperson</option><option>Interior Design</option><option>Retail / Shop</option><option>Other</option></select></div>
-        <div class="form-field"><label class="form-label">Tell me about your project</label><textarea rows="4" placeholder="What does your business do? What's missing?"></textarea></div>
-        <button type="button" class="form-submit"><span>Send message</span><span>→</span></button>
+        <div class="form-field"><label class="form-label" data-i18n="form.name">Your name</label><input type="text" data-i18n-placeholder="form.name_ph" placeholder="Jean Dupont"></div>
+        <div class="form-field"><label class="form-label" data-i18n="form.email">Email</label><input type="email" data-i18n-placeholder="form.email_ph" placeholder="hello@yourbusiness.com"></div>
+        <div class="form-field"><label class="form-label" data-i18n="form.industry">Business type</label><select><option value="" disabled selected data-i18n="form.select">Select your industry</option><option data-i18n="form.opt1">Restaurant / Food & Drink</option><option data-i18n="form.opt2">Beauty / Hair / Wellness</option><option data-i18n="form.opt3">Florist / Boutique</option><option data-i18n="form.opt4">Contractor / Tradesperson</option><option data-i18n="form.opt5">Interior Design</option><option data-i18n="form.opt6">Retail / Shop</option><option data-i18n="form.opt7">Other</option></select></div>
+        <div class="form-field"><label class="form-label" data-i18n="form.message">Tell me about your project</label><textarea rows="4" data-i18n-placeholder="form.message_ph" placeholder="What does your business do? What's missing?"></textarea></div>
+        <button type="button" class="form-submit"><span data-i18n="form.submit">Send message</span><span>→</span></button>
       </form>
     </div>
   </div>
@@ -487,6 +496,205 @@ const sites = {
   salon: salonB64,
   contractor: contractorB64
 };
+
+// ===================== I18N =====================
+const translations = {
+  en: {
+    'nav.work':'Work','nav.services':'Services','nav.about':'About','nav.contact':'Contact',
+    'hero.available':'Web Design Studio · Available Worldwide','hero.status':'Available for projects',
+    'hero.eyebrow':'Visivo · JP · Web Design',
+    'hero.line1':'Your business','hero.line2':'deserves to be','hero.line3':'seen.',
+    'hero.desc':'I build <strong>fast, beautiful websites</strong> for small businesses that are invisible online — and turn them into something their customers actually find.',
+    'hero.scroll':'Scroll',
+    'intro.label':'The problem','intro.title':'Great businesses, invisible online.',
+    'intro.body1':"Thousands of restaurants, florists, contractors and artisans do outstanding work every day — but they're impossible to find online.",
+    'intro.body2':"That's where Visivo comes in. I research, design and deliver a professional website tailored to your business — fast, personal, no agency overhead.",
+    'intro.stat1':'of customers research online before visiting a local business',
+    'intro.stat2':'of all Google searches are looking for local information',
+    'intro.stat3':'potential reach when your business is properly visible online',
+    'work.title':'Selected<br>work',
+    'work.sub':'Click any project to explore the full site. Each one is built from scratch for a different industry.',
+    'services.label':'What I offer','services.title':'How I<br><span class="ghost">can help</span>',
+    's1.name':'Website Design & Build','s1.desc':'A fully custom, professional website built from scratch. No templates, no compromise.',
+    's2.name':'Content & Copywriting','s2.desc':'I write all the text for you — services, about, contact — in French, English or German.',
+    's3.name':'Domain & Hosting Setup','s3.desc':'I handle everything technical — domain, hosting, going live. You just receive a working site.',
+    's4.name':'Ongoing Maintenance','s4.desc':'Need updates, new photos or seasonal changes? Maintenance plans are available.',
+    'about.label':"Who's behind Visivo",
+    'about.title':'I find you.<br>I build it.<br>You get clients.',
+    'about.body1':"I'm JP — I work remotely and serve businesses anywhere in the world, from France to the Netherlands to wherever you are.",
+    'about.body2':"I don't wait for you to come to me. I find businesses doing great work that nobody can find online, build them a first draft, and show them what's possible.",
+    'ac1.title':'Fast turnaround','ac1.body':'First draft within days. You see something real before committing to anything.',
+    'ac2.title':'100% custom','ac2.body':'Every site built specifically for your business. Your colours, your tone, nothing generic.',
+    'ac3.title':'Based online, available everywhere','ac3.body':'I work remotely and collaborate with clients across France, Belgium, the Netherlands and beyond.',
+    'ac4.title':'One person, full accountability','ac4.body':'You deal with me directly from start to finish. No hand-offs, no gaps.',
+    'contact.label':'Get in touch','contact.title':"Let's talk<br>about your<br>business.",
+    'contact.body':"Tell me about your business and what you're looking for. I'll come back to you quickly.",
+    'contact.note':'Interested in ongoing updates? <strong>Maintenance plans</strong> are available — just mention it in your message.',
+    'form.name':'Your name','form.name_ph':'Jean Dupont',
+    'form.email':'Email','form.email_ph':'hello@yourbusiness.com',
+    'form.industry':'Business type','form.select':'Select your industry',
+    'form.message':'Tell me about your project','form.message_ph':"What does your business do? What's missing?",
+    'form.submit':'Send message',
+    'form.opt1':'Restaurant / Food & Drink','form.opt2':'Beauty / Hair / Wellness',
+    'form.opt3':'Florist / Boutique','form.opt4':'Contractor / Tradesperson',
+    'form.opt5':'Interior Design','form.opt6':'Retail / Shop','form.opt7':'Other',
+    'footer.copy':'© 2024 Visivo · JP · All rights reserved'
+  },
+  fr: {
+    'nav.work':'Travaux','nav.services':'Services','nav.about':'À propos','nav.contact':'Contact',
+    'hero.available':'Studio Web · Disponible partout dans le monde','hero.status':'Disponible pour des projets',
+    'hero.eyebrow':'Visivo · JP · Création de sites web',
+    'hero.line1':'Votre entreprise','hero.line2':'mérite d\'être','hero.line3':'vue.',
+    'hero.desc':'Je crée des <strong>sites web beaux et rapides</strong> pour les petites entreprises invisibles en ligne — et je les transforme en quelque chose que leurs clients trouvent vraiment.',
+    'hero.scroll':'Défiler',
+    'intro.label':'Le problème','intro.title':'De superbes entreprises, invisibles en ligne.',
+    'intro.body1':'Des milliers de restaurants, fleuristes, artisans et prestataires font un travail remarquable chaque jour — mais ils sont introuvables en ligne.',
+    'intro.body2':"C'est là qu'intervient Visivo. Je recherche, conçois et livre un site web professionnel adapté à votre activité — rapide, personnel, sans frais d'agence.",
+    'intro.stat1':'des clients font des recherches en ligne avant de visiter une entreprise locale',
+    'intro.stat2':'des recherches Google concernent des informations locales',
+    'intro.stat3':'de portée potentielle lorsque votre entreprise est bien visible en ligne',
+    'work.title':'Travaux<br>sélectionnés',
+    'work.sub':'Cliquez sur un projet pour explorer le site complet. Chacun est construit de zéro pour un secteur différent.',
+    'services.label':'Ce que je propose','services.title':'Comment je<br><span class="ghost">peux vous aider</span>',
+    's1.name':'Conception & Création de site','s1.desc':'Un site web entièrement sur mesure, professionnel, construit de zéro. Pas de template, pas de compromis.',
+    's2.name':'Contenu & Rédaction','s2.desc':'Je rédige tous les textes pour vous — services, à propos, contact — en français, anglais ou allemand.',
+    's3.name':'Domaine & Hébergement','s3.desc':'Je gère tout l\'aspect technique — domaine, hébergement, mise en ligne. Vous recevez simplement un site fonctionnel.',
+    's4.name':'Maintenance continue','s4.desc':'Besoin de mises à jour, nouvelles photos ou changements saisonniers ? Des plans de maintenance sont disponibles.',
+    'about.label':'Qui est derrière Visivo',
+    'about.title':'Je vous trouve.<br>Je construis.<br>Vous gagnez des clients.',
+    'about.body1':"Je suis JP — je travaille à distance et accompagne des entreprises partout dans le monde, de la France aux Pays-Bas et au-delà.",
+    'about.body2':"Je n'attends pas que vous veniez à moi. Je trouve des entreprises qui font un travail remarquable mais que personne ne trouve en ligne, je crée une première ébauche et je leur montre ce qui est possible.",
+    'ac1.title':'Livraison rapide','ac1.body':'Première ébauche en quelques jours. Vous voyez quelque chose de concret avant tout engagement.',
+    'ac2.title':'100% sur mesure','ac2.body':'Chaque site est conçu spécifiquement pour votre entreprise. Vos couleurs, votre ton, rien de générique.',
+    'ac3.title':'En ligne, disponible partout','ac3.body':'Je travaille à distance et collabore avec des clients en France, Belgique, aux Pays-Bas et ailleurs.',
+    'ac4.title':'Une seule personne, pleine responsabilité','ac4.body':'Vous traitez directement avec moi du début à la fin. Pas de transfert, pas de lacune.',
+    'contact.label':'Contactez-moi','contact.title':'Parlons de<br>votre<br>entreprise.',
+    'contact.body':"Parlez-moi de votre activité et de ce que vous recherchez. Je vous répondrai rapidement avec des idées et des prochaines étapes.",
+    'contact.note':'Intéressé par des mises à jour régulières ? Des <strong>plans de maintenance</strong> sont disponibles — mentionnez-le simplement dans votre message.',
+    'form.name':'Votre nom','form.name_ph':'Jean Dupont',
+    'form.email':'Email','form.email_ph':'bonjour@votreentreprise.fr',
+    'form.industry':'Type d\'activité','form.select':'Sélectionnez votre secteur',
+    'form.message':'Parlez-moi de votre projet','form.message_ph':"Que fait votre entreprise ? Qu'est-ce qui manque ?",
+    'form.submit':'Envoyer le message',
+    'form.opt1':'Restaurant / Alimentation','form.opt2':'Beauté / Coiffure / Bien-être',
+    'form.opt3':'Fleuriste / Boutique','form.opt4':'Artisan / Prestataire',
+    'form.opt5':'Design d\'intérieur','form.opt6':'Commerce / Magasin','form.opt7':'Autre',
+    'footer.copy':'© 2024 Visivo · JP · Tous droits réservés'
+  },
+  de: {
+    'nav.work':'Arbeiten','nav.services':'Leistungen','nav.about':'Über uns','nav.contact':'Kontakt',
+    'hero.available':'Web-Design-Studio · Weltweit verfügbar','hero.status':'Offen für Projekte',
+    'hero.eyebrow':'Visivo · JP · Webdesign',
+    'hero.line1':'Ihr Unternehmen','hero.line2':'verdient es, gesehen','hero.line3':'zu werden.',
+    'hero.desc':'Ich erstelle <strong>schnelle, schöne Websites</strong> für kleine Unternehmen, die online unsichtbar sind — und mache sie zu etwas, das ihre Kunden wirklich finden.',
+    'hero.scroll':'Scrollen',
+    'intro.label':'Das Problem','intro.title':'Großartige Unternehmen, online unsichtbar.',
+    'intro.body1':'Tausende von Restaurants, Floristen, Handwerkern und Kunsthandwerkern leisten täglich hervorragende Arbeit — aber sie sind online nicht auffindbar.',
+    'intro.body2':'Hier kommt Visivo ins Spiel. Ich recherchiere, entwerfe und liefere eine professionelle Website, die auf Ihr Unternehmen zugeschnitten ist — schnell, persönlich, ohne Agenturaufwand.',
+    'intro.stat1':'der Kunden recherchieren online, bevor sie ein lokales Unternehmen besuchen',
+    'intro.stat2':'aller Google-Suchanfragen beziehen sich auf lokale Informationen',
+    'intro.stat3':'potenzielle Reichweite, wenn Ihr Unternehmen online gut sichtbar ist',
+    'work.title':'Ausgewählte<br>Arbeiten',
+    'work.sub':'Klicken Sie auf ein Projekt, um die vollständige Website zu erkunden. Jede wurde von Grund auf für eine andere Branche erstellt.',
+    'services.label':'Mein Angebot','services.title':'Wie ich<br><span class="ghost">helfen kann</span>',
+    's1.name':'Website-Design & -Entwicklung','s1.desc':'Eine vollständig individuelle, professionelle Website von Grund auf. Keine Vorlagen, kein Kompromiss.',
+    's2.name':'Inhalt & Texterstellung','s2.desc':'Ich schreibe alle Texte für Sie — Leistungen, Über uns, Kontakt — auf Französisch, Englisch oder Deutsch.',
+    's3.name':'Domain & Hosting-Einrichtung','s3.desc':'Ich kümmere mich um alles Technische — Domain, Hosting, Live-Schaltung. Sie erhalten einfach eine funktionierende Website.',
+    's4.name':'Laufende Wartung','s4.desc':'Benötigen Sie Updates, neue Fotos oder saisonale Änderungen? Wartungspläne sind verfügbar.',
+    'about.label':'Wer steckt hinter Visivo',
+    'about.title':'Ich finde Sie.<br>Ich baue es.<br>Sie gewinnen Kunden.',
+    'about.body1':"Ich bin JP — ich arbeite remote und betreue Unternehmen weltweit, von Frankreich bis in die Niederlande und überall sonst.",
+    'about.body2':"Ich warte nicht darauf, dass Sie zu mir kommen. Ich finde Unternehmen, die großartige Arbeit leisten, aber online nicht gefunden werden, erstelle einen ersten Entwurf und zeige ihnen, was möglich ist.",
+    'ac1.title':'Schnelle Lieferung','ac1.body':'Erster Entwurf innerhalb weniger Tage. Sie sehen etwas Reales, bevor Sie sich zu etwas verpflichten.',
+    'ac2.title':'100% individuell','ac2.body':'Jede Website speziell für Ihr Unternehmen erstellt. Ihre Farben, Ihr Ton, nichts Generisches.',
+    'ac3.title':'Online-basiert, überall verfügbar','ac3.body':'Ich arbeite remote und arbeite mit Kunden in Frankreich, Belgien, den Niederlanden und darüber hinaus zusammen.',
+    'ac4.title':'Eine Person, volle Verantwortung','ac4.body':'Sie arbeiten von Anfang bis Ende direkt mit mir zusammen. Keine Übergaben, keine Lücken.',
+    'contact.label':'Kontakt aufnehmen','contact.title':'Sprechen wir über<br>Ihr<br>Unternehmen.',
+    'contact.body':"Erzählen Sie mir von Ihrem Unternehmen und was Sie suchen. Ich melde mich schnell mit Ideen und nächsten Schritten.",
+    'contact.note':'Interesse an regelmäßigen Updates? <strong>Wartungspläne</strong> sind verfügbar — erwähnen Sie es einfach in Ihrer Nachricht.',
+    'form.name':'Ihr Name','form.name_ph':'Max Müller',
+    'form.email':'E-Mail','form.email_ph':'hallo@ihrunternehmen.de',
+    'form.industry':'Branche','form.select':'Branche auswählen',
+    'form.message':'Erzählen Sie mir von Ihrem Projekt','form.message_ph':"Was macht Ihr Unternehmen? Was fehlt?",
+    'form.submit':'Nachricht senden',
+    'form.opt1':'Restaurant / Gastronomie','form.opt2':'Beauty / Haare / Wellness',
+    'form.opt3':'Florist / Boutique','form.opt4':'Handwerker / Auftragnehmer',
+    'form.opt5':'Innenarchitektur','form.opt6':'Einzelhandel / Geschäft','form.opt7':'Sonstiges',
+    'footer.copy':'© 2024 Visivo · JP · Alle Rechte vorbehalten'
+  }
+};
+
+let currentLang = 'en';
+
+function setLang(lang) {
+  currentLang = lang;
+  const t = translations[lang];
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if(t[key] !== undefined) el.innerHTML = t[key];
+  });
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const key = el.getAttribute('data-i18n-placeholder');
+    if(t[key] !== undefined) el.placeholder = t[key];
+  });
+  // Update lang buttons
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.textContent.toLowerCase() === lang);
+  });
+  // Update panels with new lang
+  updatePanelLang(lang);
+  // Animate transition
+  document.body.style.opacity = '0.7';
+  setTimeout(() => document.body.style.opacity = '1', 200);
+}
+
+function updatePanelLang(lang) {
+  const panelTranslations = {
+    en: {
+      design: {num:'01',label:'Website Design & Build',title:'A site built around your business — not a template.',body:['I start by researching your business, your competitors, and your customers. Then I design a website that fits your brand, communicates what you do clearly, and converts visitors into clients.','Every element — layout, typography, colour, copy — is chosen intentionally. The result is a professional, fast, mobile-friendly site you will actually be proud to share.'],list:['Custom design — no Wix, no WordPress templates','Mobile-first, fast-loading pages','Built with your brand identity in mind','SEO basics included','Delivered as a ready-to-deploy file'],meta:'Typical delivery: 3–7 days from briefing to first draft.'},
+      content: {num:'02',label:'Content & Copywriting',title:'Words that work as hard as your business does.',body:['Most business owners know what they do — but struggle to explain it online in a way that makes customers trust them and take action.','I write all the copy for your site. Services, about pages, headlines, CTAs. Available in French, English and German.'],list:['Homepage copy that communicates your value immediately','Service descriptions that explain what you offer clearly','About section that builds trust','Calls-to-action that drive enquiries','Available in French, English and German'],meta:'Included in most website packages. Also available as a standalone service.'},
+      hosting: {num:'03',label:'Domain & Hosting Setup',title:'You focus on your business. I handle the technical side.',body:['Domains, hosting, DNS records, going live — none of this should be your problem to deal with. I take care of all of it.','You receive a simple handover with your login credentials, and I walk you through anything you need to know.'],list:['Domain name registration and setup','Hosting configuration','DNS and technical setup','SSL certificate','Simple handover with guidance'],meta:'Hosting costs typically €5–15/month. Discussed transparently before any commitment.'},
+      maintenance: {num:'04',label:'Ongoing Maintenance',title:'Keep your site fresh — without lifting a finger.',body:['Businesses change. Opening hours shift, new services get added, photos need updating. A maintenance plan means your website stays accurate.','Send me a message and I make the change. Plans are flexible and discussed based on what your business needs.'],list:['Text and content updates on request','New photos or service additions','Seasonal updates','Technical upkeep','Priority response time for existing clients'],meta:'Maintenance is always discussed separately and tailored to your needs.'}
+    },
+    fr: {
+      design: {num:'01',label:'Conception & Création',title:'Un site conçu autour de votre entreprise — pas un template.',body:["Je commence par rechercher votre entreprise, vos concurrents et vos clients. Ensuite, je conçois un site qui correspond à votre marque et convertit les visiteurs en clients.","Chaque élément — mise en page, typographie, couleurs, textes — est choisi intentionnellement. Le résultat est un site professionnel, rapide et adapté aux mobiles."],list:['Design sur mesure — pas de Wix, pas de WordPress','Conçu en priorité pour mobile','Basé sur votre identité de marque','Bases SEO incluses','Livré prêt à déployer'],meta:'Livraison typique : 3 à 7 jours du briefing à la première ébauche.'},
+      content: {num:'02',label:'Contenu & Rédaction',title:'Des mots qui travaillent aussi dur que votre entreprise.',body:["La plupart des entrepreneurs savent ce qu'ils font — mais ont du mal à l'expliquer en ligne de manière à inspirer confiance.","Je rédige tous les textes de votre site. Services, pages à propos, titres, appels à l'action. Disponible en français, anglais et allemand."],list:["Texte d'accueil qui communique votre valeur immédiatement","Descriptions de services claires","Page À propos qui inspire confiance","Appels à l'action qui génèrent des demandes","Disponible en français, anglais et allemand"],meta:'Inclus dans la plupart des packages. Également disponible en prestation séparée.'},
+      hosting: {num:'03',label:'Domaine & Hébergement',title:'Vous vous concentrez sur votre activité. Je gère la technique.',body:["Domaine, hébergement, DNS, mise en ligne — rien de tout cela ne devrait vous préoccuper. Je m'en occupe entièrement.","Vous recevez une transmission simple avec vos identifiants de connexion."],list:['Enregistrement et configuration du nom de domaine','Configuration de l\'hébergement','Configuration DNS et technique','Certificat SSL','Transmission simple avec guide'],meta:'Les coûts d\'hébergement sont typiquement de 5 à 15 €/mois. Discutés de manière transparente.'},
+      maintenance: {num:'04',label:'Maintenance continue',title:'Gardez votre site à jour — sans effort de votre part.',body:['Les entreprises évoluent. Les horaires changent, de nouveaux services s\'ajoutent, les photos se mettent à jour. Un plan de maintenance garantit l\'exactitude de votre site.',"Envoyez-moi un message et je fais la modification. Les plans sont flexibles selon vos besoins."],list:['Mises à jour de texte et contenu sur demande','Nouvelles photos ou ajout de services','Mises à jour saisonnières','Maintenance technique','Temps de réponse prioritaire pour les clients existants'],meta:'La maintenance est toujours discutée séparément et adaptée à vos besoins.'}
+    },
+    de: {
+      design: {num:'01',label:'Design & Entwicklung',title:'Eine Website rund um Ihr Unternehmen — kein Template.',body:['Ich beginne damit, Ihr Unternehmen, Ihre Mitbewerber und Ihre Kunden zu recherchieren. Dann entwerfe ich eine Website, die zu Ihrer Marke passt und Besucher in Kunden verwandelt.','Jedes Element — Layout, Typografie, Farben, Texte — wird bewusst gewählt. Das Ergebnis ist eine professionelle, schnelle, mobilfreundliche Website.'],list:['Individuelles Design — kein Wix, keine WordPress-Vorlagen','Mobile-first, schnell ladende Seiten','Basierend auf Ihrer Markenidentität','SEO-Grundlagen inklusive','Fertig zur Bereitstellung geliefert'],meta:'Typische Lieferzeit: 3–7 Tage vom Briefing bis zum ersten Entwurf.'},
+      content: {num:'02',label:'Inhalt & Texterstellung',title:'Worte, die genauso hart arbeiten wie Ihr Unternehmen.',body:['Die meisten Unternehmer wissen, was sie tun — aber es fällt ihnen schwer, es online so zu erklären, dass Kunden Vertrauen fassen.','Ich schreibe alle Texte für Ihre Website. Leistungen, Über-uns-Seiten, Überschriften, CTAs. Auf Französisch, Englisch und Deutsch.'],list:['Startseiten-Text, der Ihren Wert sofort kommuniziert','Klare Leistungsbeschreibungen','Über-uns-Abschnitt, der Vertrauen aufbaut','Handlungsaufforderungen','Auf Französisch, Englisch und Deutsch verfügbar'],meta:'In den meisten Website-Paketen enthalten. Auch als eigenständige Leistung verfügbar.'},
+      hosting: {num:'03',label:'Domain & Hosting-Einrichtung',title:'Sie konzentrieren sich auf Ihr Geschäft. Ich kümmere mich ums Technische.',body:['Domain, Hosting, DNS, Live-Schaltung — das alles muss nicht Ihr Problem sein. Ich kümmere mich darum.','Sie erhalten eine einfache Übergabe mit Ihren Zugangsdaten.'],list:['Domain-Registrierung und -Einrichtung','Hosting-Konfiguration','DNS und technische Einrichtung','SSL-Zertifikat','Einfache Übergabe mit Anleitung'],meta:'Hosting-Kosten typischerweise 5–15 €/Monat. Transparent besprochen vor jeder Verpflichtung.'},
+      maintenance: {num:'04',label:'Laufende Wartung',title:'Halten Sie Ihre Website frisch — ohne einen Finger zu rühren.',body:['Unternehmen ändern sich. Öffnungszeiten ändern sich, neue Leistungen kommen hinzu, Fotos müssen aktualisiert werden. Ein Wartungsplan hält Ihre Website aktuell.','Schicken Sie mir eine Nachricht und ich nehme die Änderung vor. Pläne sind flexibel je nach Ihren Bedürfnissen.'],list:['Text- und Inhaltsaktualisierungen auf Anfrage','Neue Fotos oder Leistungsergänzungen','Saisonale Updates','Technische Pflege','Prioritäts-Reaktionszeit für Bestandskunden'],meta:'Wartung wird immer separat besprochen und auf Ihre Bedürfnisse zugeschnitten.'}
+    }
+  };
+  // Store for use in openPanel
+  window._panelT = panelTranslations[lang] || panelTranslations.en;
+}
+
+// Initialize panel translations
+updatePanelLang('en');
+
+// Override openPanel to use current lang
+function openPanel(key){
+  const d = window._panelT[key];
+  if(!d) return;
+  document.getElementById('panelContent').innerHTML=[
+    '<div class="panel-num">'+d.num+'<\/div>',
+    '<span class="panel-label">'+d.label+'<\/span>',
+    '<h2 class="panel-title">'+d.title+'<\/h2>',
+    d.body.map(p=>'<p class="panel-body">'+p+'<\/p>').join(''),
+    '<div class="panel-divider"><\/div>',
+    '<div class="panel-list">'+d.list.map(i=>'<div class="panel-list-item">'+i+'<\/div>').join('')+'<\/div>',
+    '<div class="panel-divider"><\/div>',
+    '<p class="panel-meta">'+d.meta+'<\/p>',
+    '<a href="#contact" class="panel-cta" onclick="closePanel()">'+(currentLang==='fr'?'Démarrer une conversation →':currentLang==='de'?'Gespräch beginnen →':'Start a conversation →')+'<\/a>'
+  ].join('');
+  document.getElementById('panel').classList.add('open');
+  document.getElementById('panelOverlay').classList.add('open');
+  document.body.style.overflow='hidden';
+}
 
 // Cursor
 const cur=document.getElementById('cur'),ring=document.getElementById('cur-ring');
@@ -524,36 +732,6 @@ function closePreview(){
   setTimeout(()=>{document.getElementById('previewFrame').srcdoc='about:blank';},400);
 }
 
-// Service panels
-const panels={
-  design:{num:'01',label:'Website Design & Build',title:'A site built around your business — not a template.',body:['I start by researching your business, your competitors, and your customers. Then I design a website that fits your brand, communicates what you do clearly, and converts visitors into clients.','Every element — layout, typography, colour, copy — is chosen intentionally. The result is a professional, fast, mobile-friendly site you will actually be proud to share.'],list:['Custom design — no Wix, no WordPress templates','Mobile-first, fast-loading pages','Built with your brand identity in mind','SEO basics included','Delivered as a ready-to-deploy file'],meta:'Typical delivery: 3–7 days from briefing to first draft.'},
-  content:{num:'02',label:'Content & Copywriting',title:'Words that work as hard as your business does.',body:['Most business owners know what they do — but struggle to explain it online in a way that makes customers trust them and take action.','I write all the copy for your site. Services, about pages, headlines, CTAs. Available in French, English and Dutch.'],list:['Homepage copy that communicates your value immediately','Service descriptions that explain what you offer clearly','About section that builds trust','Calls-to-action that drive enquiries','Available in French, English and Dutch'],meta:'Included in most website packages. Also available as a standalone service.'},
-  hosting:{num:'03',label:'Domain & Hosting Setup',title:'You focus on your business. I handle the technical side.',body:['Domains, hosting, DNS records, going live — none of this should be your problem to deal with. I take care of all of it.','You receive a simple handover with your login credentials, and I walk you through anything you need to know.'],list:['Domain name registration and setup','Hosting configuration','DNS and technical setup','SSL certificate','Simple handover with guidance'],meta:'Hosting costs typically €5–15/month. Discussed transparently before any commitment.'},
-  maintenance:{num:'04',label:'Ongoing Maintenance',title:'Keep your site fresh — without lifting a finger.',body:['Businesses change. Opening hours shift, new services get added, photos need updating. A maintenance plan means your website stays accurate.','Send me a message and I make the change. Plans are flexible and discussed based on what your business needs.'],list:['Text and content updates on request','New photos or service additions','Seasonal updates','Technical upkeep','Priority response time for existing clients'],meta:'Maintenance is always discussed separately and tailored to your needs.'}
-};
-
-function openPanel(key){
-  const d=panels[key];
-  document.getElementById('panelContent').innerHTML=[
-  '<div class="panel-num">'+d.num+'<\/div>',
-  '<span class="panel-label">'+d.label+'<\/span>',
-  '<h2 class="panel-title">'+d.title+'<\/h2>',
-  d.body.map(p=>'<p class="panel-body">'+p+'<\/p>').join(''),
-  '<div class="panel-divider"><\/div>',
-  '<div class="panel-list">'+d.list.map(i=>'<div class="panel-list-item">'+i+'<\/div>').join('')+'<\/div>',
-  '<div class="panel-divider"><\/div>',
-  '<p class="panel-meta">'+d.meta+'<\/p>',
-  '<a href="#contact" class="panel-cta" onclick="closePanel()">Start a conversation →<\/a>'
-].join('');
-  document.getElementById('panel').classList.add('open');
-  document.getElementById('panelOverlay').classList.add('open');
-  document.body.style.overflow='hidden';
-}
-function closePanel(){
-  document.getElementById('panel').classList.remove('open');
-  document.getElementById('panelOverlay').classList.remove('open');
-  document.body.style.overflow='';
-}
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){closePanel();closePreview();}});
 </script>
 </body>
