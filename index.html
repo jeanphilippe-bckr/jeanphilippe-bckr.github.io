@@ -267,16 +267,247 @@ footer{padding:2rem 3rem;display:flex;align-items:center;justify-content:space-b
 .footer-copy{font-size:11px;color:rgba(245,242,238,0.2);letter-spacing:0.1em;}
 .footer-links a{font-size:11px;color:var(--muted);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.2s;margin-left:2rem;}
 .footer-links a:hover{color:var(--orange);}
+/* ===== PROCESS ===== */
+.process{padding:8rem 3rem;background:var(--off);border-top:1px solid var(--border);}
+.process-inner{max-width:1400px;margin:0 auto;}
+.process-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:5rem;}
+.process-header-left{}
+.process-label{font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--orange);margin-bottom:1rem;display:block;}
+.process-title{font-family:'Syne',sans-serif;font-size:clamp(2.5rem,5vw,5rem);font-weight:800;line-height:0.9;}
+.process-sub{font-size:0.9rem;color:var(--muted);max-width:260px;line-height:1.7;text-align:right;}
+.process-steps{display:grid;grid-template-columns:repeat(4,1fr);position:relative;}
+.process-steps::before{content:'';position:absolute;top:28px;left:10%;right:10%;height:1px;background:linear-gradient(to right,transparent,var(--orange),var(--orange),transparent);opacity:0.25;}
+.step{padding:0 2rem 0 0;position:relative;}
+.step-dot{width:56px;height:56px;border:1px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:2rem;position:relative;z-index:1;background:var(--off);transition:border-color 0.3s,background 0.3s;}
+.step:hover .step-dot{border-color:var(--orange);background:var(--orange-dim);}
+.step-num{font-family:'Syne',sans-serif;font-size:0.75rem;font-weight:700;color:var(--orange);}
+.step-title{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:600;margin-bottom:0.75rem;}
+.step-desc{font-size:0.88rem;color:var(--muted);line-height:1.75;}
+
+/* ===== BEFORE/AFTER ===== */
+.ba-section{padding:8rem 3rem;border-top:1px solid var(--border);}
+.ba-inner{max-width:1400px;margin:0 auto;}
+.ba-header{margin-bottom:4rem;}
+.ba-label{font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--orange);margin-bottom:1rem;display:block;}
+.ba-title{font-family:'Syne',sans-serif;font-size:clamp(2rem,4vw,4rem);font-weight:800;line-height:0.95;}
+.ba-toggle-wrap{display:flex;align-items:center;gap:0;margin-bottom:3rem;border:1px solid var(--border);width:fit-content;}
+.ba-tab{padding:0.75rem 2rem;font-size:12px;letter-spacing:0.15em;text-transform:uppercase;background:none;border:none;color:var(--muted);cursor:none;font-family:'DM Sans',sans-serif;transition:all 0.25s;}
+.ba-tab.active{background:var(--orange);color:var(--black);font-weight:700;}
+.ba-panels{position:relative;}
+.ba-panel{display:none;}
+.ba-panel.active{display:block;}
+.ba-before{background:var(--dim);border:1px solid var(--border);border-radius:4px;padding:3rem;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;}
+.ba-before-left{}
+.ba-before-tag{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(245,242,238,0.3);margin-bottom:1.5rem;display:block;}
+.ba-before-title{font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:700;color:rgba(245,242,238,0.4);margin-bottom:1rem;}
+.ba-before-desc{font-size:0.9rem;color:rgba(245,242,238,0.25);line-height:1.8;}
+.ba-before-screen{background:#1E1E1E;border:1px solid rgba(245,242,238,0.06);border-radius:4px;aspect-ratio:16/9;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;}
+.ba-map-dot{width:48px;height:48px;border-radius:50%;background:rgba(255,92,58,0.15);border:1px solid rgba(255,92,58,0.25);display:flex;align-items:center;justify-content:center;font-size:1.2rem;}
+.ba-map-info{text-align:center;}
+.ba-map-name{font-family:'Syne',sans-serif;font-size:0.9rem;font-weight:700;color:rgba(245,242,238,0.5);}
+.ba-map-addr{font-size:0.75rem;color:rgba(245,242,238,0.25);margin-top:0.25rem;}
+.ba-map-rating{font-size:0.75rem;color:var(--orange);opacity:0.5;margin-top:0.25rem;}
+.ba-map-no-site{font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(245,242,238,0.2);margin-top:0.5rem;border:1px solid rgba(245,242,238,0.08);padding:4px 10px;}
+.ba-after{background:var(--dim);border:1px solid rgba(255,92,58,0.2);border-radius:4px;padding:3rem;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;}
+.ba-after-tag{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--orange);margin-bottom:1.5rem;display:block;}
+.ba-after-title{font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:700;margin-bottom:1rem;}
+.ba-after-desc{font-size:0.9rem;color:var(--muted);line-height:1.8;}
+.ba-after-screen{border-radius:4px;overflow:hidden;aspect-ratio:16/9;position:relative;background:#111;}
+.ba-site-mock{width:100%;height:100%;position:relative;}
+.ba-site-nav{background:#0A0A0A;height:14%;display:flex;align-items:center;justify-content:space-between;padding:0 6%;}
+.ba-site-logo{font-family:'Syne',sans-serif;font-size:0.7vw;font-weight:700;color:var(--white);letter-spacing:0.12em;}
+.ba-site-links{display:flex;gap:1.5vw;}
+.ba-site-link{font-size:0.4vw;color:var(--muted);letter-spacing:0.1em;}
+.ba-site-hero{height:55%;background:linear-gradient(135deg,#1A1A1A,#2A2A2A);display:flex;align-items:flex-end;padding:4%;}
+.ba-site-h1{font-family:'Syne',sans-serif;font-size:2.5vw;font-weight:800;color:white;line-height:0.9;}
+.ba-site-h1 em{color:var(--orange);font-style:normal;}
+.ba-site-bottom{height:31%;background:#111;display:flex;gap:1px;}
+.ba-site-card{flex:1;background:#161616;display:flex;align-items:center;justify-content:center;}
+.ba-site-card-t{font-size:0.5vw;color:rgba(245,242,238,0.3);letter-spacing:0.1em;text-transform:uppercase;}
+.ba-diff{margin-top:1.5rem;display:flex;gap:1rem;flex-wrap:wrap;}
+.ba-diff-item{font-size:12px;color:var(--orange);border:1px solid rgba(255,92,58,0.25);padding:4px 12px;letter-spacing:0.08em;}
+
+/* ===== FAQ ===== */
+.faq-section{padding:8rem 3rem;background:var(--off);border-top:1px solid var(--border);}
+.faq-inner{max-width:900px;margin:0 auto;}
+.faq-header{margin-bottom:4rem;}
+.faq-label{font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--orange);margin-bottom:1rem;display:block;}
+.faq-title{font-family:'Syne',sans-serif;font-size:clamp(2rem,4vw,4rem);font-weight:800;line-height:0.95;}
+.faq-list{display:flex;flex-direction:column;}
+.faq-item{border-top:1px solid var(--border);overflow:hidden;}
+.faq-item:last-child{border-bottom:1px solid var(--border);}
+.faq-q{display:flex;align-items:center;justify-content:space-between;padding:1.75rem 0;cursor:none;gap:2rem;}
+.faq-q-text{font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:600;line-height:1.3;}
+.faq-icon{width:32px;height:32px;border:1px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1rem;color:var(--muted);transition:all 0.3s;}
+.faq-item.open .faq-icon{background:var(--orange);border-color:var(--orange);color:var(--black);transform:rotate(45deg);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height 0.4s ease;}
+.faq-item.open .faq-a{max-height:300px;}
+.faq-a-inner{padding:0 0 2rem;font-size:0.92rem;color:var(--muted);line-height:1.85;max-width:680px;}
+
+/* ===== TESTIMONIALS ===== */
+.testi-section{padding:8rem 3rem;border-top:1px solid var(--border);}
+.testi-inner{max-width:1400px;margin:0 auto;}
+.testi-header{margin-bottom:4rem;}
+.testi-label{font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--orange);margin-bottom:1rem;display:block;}
+.testi-title{font-family:'Syne',sans-serif;font-size:clamp(2rem,4vw,4rem);font-weight:800;line-height:0.95;}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;border:1px solid var(--border);}
+.testi-card{padding:2.5rem;background:var(--off);transition:background 0.3s;}
+.testi-card:hover{background:var(--dim);}
+.testi-stars{color:var(--orange);font-size:0.85rem;margin-bottom:1.5rem;letter-spacing:0.1em;}
+.testi-quote{font-family:'DM Sans',sans-serif;font-size:1rem;font-style:italic;color:var(--white);line-height:1.8;margin-bottom:2rem;opacity:0.85;}
+.testi-divider{width:32px;height:1px;background:var(--orange);margin-bottom:1.5rem;opacity:0.5;}
+.testi-name{font-family:'Syne',sans-serif;font-size:0.85rem;font-weight:700;}
+.testi-role{font-size:0.78rem;color:var(--muted);margin-top:0.25rem;letter-spacing:0.06em;}
+.testi-note{margin-top:2rem;text-align:center;font-size:11px;color:rgba(245,242,238,0.2);letter-spacing:0.1em;}
+
+/* ===== FLOATING CTA ===== */
+.float-cta{position:fixed;bottom:2rem;right:2rem;z-index:150;opacity:0;transform:translateY(20px);transition:opacity 0.4s,transform 0.4s;pointer-events:none;}
+.float-cta.visible{opacity:1;transform:translateY(0);pointer-events:all;}
+.float-btn{display:flex;align-items:center;gap:0.75rem;background:var(--orange);color:var(--black);text-decoration:none;padding:0.9rem 1.5rem;font-family:'Syne',sans-serif;font-size:0.75rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;box-shadow:0 4px 20px rgba(255,92,58,0.35);transition:box-shadow 0.2s,transform 0.2s;cursor:none;}
+.float-btn:hover{box-shadow:0 6px 28px rgba(255,92,58,0.5);transform:translateY(-2px);}
+.float-dot{width:6px;height:6px;border-radius:50%;background:var(--black);animation:pulse 2s ease-in-out infinite;}
+
+/* ===== FOOTER COOKIE NOTE ===== */
+.footer-privacy{font-size:10px;color:rgba(245,242,238,0.18);letter-spacing:0.08em;margin-top:0.4rem;}
+
 .reveal{opacity:0;transform:translateY(40px);transition:opacity 0.8s ease,transform 0.8s ease;}
 .reveal.visible{opacity:1;transform:translateY(0);}
 .reveal-left{opacity:0;transform:translateX(-40px);transition:opacity 0.8s ease,transform 0.8s ease;}
 .reveal-left.visible{opacity:1;transform:translateX(0);}
-@media(max-width:900px){.intro,.about,.contact-inner{grid-template-columns:1fr;}.projects{display:flex;flex-direction:column;}.service-item{grid-template-columns:60px 1fr;}.service-desc,.service-arrow{display:none;}nav{padding:1.5rem;}.nav-links{display:none;}}
+/* ===================== MOBILE ===================== */
+
+/* Hamburger button */
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:none;padding:4px;z-index:201;}
+.hamburger span{display:block;width:24px;height:1.5px;background:var(--white);transition:all 0.3s;}
+.hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
+.hamburger.open span:nth-child(2){opacity:0;}
+.hamburger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
+
+/* Mobile menu drawer */
+.mobile-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:var(--black);z-index:200;flex-direction:column;justify-content:center;align-items:center;gap:2.5rem;opacity:0;pointer-events:none;transition:opacity 0.4s;}
+.mobile-menu.open{opacity:1;pointer-events:all;}
+.mobile-menu a{font-family:'Syne',sans-serif;font-size:2.5rem;font-weight:800;color:var(--white);text-decoration:none;letter-spacing:-0.02em;transition:color 0.2s;}
+.mobile-menu a:hover{color:var(--orange);}
+.mobile-lang{display:flex;gap:0.75rem;margin-top:1rem;}
+.mobile-lang button{background:none;border:1px solid var(--border);color:var(--muted);font-family:'DM Sans',sans-serif;font-size:13px;letter-spacing:0.15em;text-transform:uppercase;padding:8px 16px;cursor:none;transition:all 0.2s;}
+.mobile-lang button.active{background:var(--orange);border-color:var(--orange);color:var(--black);font-weight:700;}
+
+@media(max-width:768px){
+  body{cursor:auto;}
+  #cur,#cur-ring{display:none;}
+  .hamburger{display:flex;}
+  .mobile-menu{display:flex;}
+  .nav-links{display:none !important;}
+  nav{padding:1.25rem 1.5rem;}
+
+  /* HERO */
+  .hero{padding:1.5rem;padding-top:5rem;padding-bottom:4rem;min-height:100svh;}
+  .hero-bg-num{font-size:55vw;right:-1rem;}
+  .hero-top-bar{top:4.5rem;left:1.5rem;right:1.5rem;}
+  .hero-top-label{font-size:9px;}
+  .hero-eyebrow{font-size:10px;margin-bottom:1rem;}
+  .hero-title{font-size:clamp(3rem,14vw,5rem);margin-bottom:2rem;}
+  .hero-bottom{flex-direction:column;gap:2rem;align-items:flex-start;}
+  .hero-desc{font-size:0.9rem;max-width:100%;}
+  .hero-scroll{display:none;}
+
+  /* TICKER */
+  .ticker-item{font-size:0.75rem;padding:0 1.25rem;}
+
+  /* INTRO */
+  .intro{padding:4rem 1.5rem;grid-template-columns:1fr;gap:3rem;}
+  .intro-num{font-size:5rem;}
+  .intro-title{font-size:1.8rem;}
+  .intro-stat{margin-bottom:1.5rem;}
+  .stat-n{font-size:2rem;}
+
+  /* WORK */
+  .work{padding:4rem 1.5rem;}
+  .work-header{flex-direction:column;align-items:flex-start;gap:1rem;margin-bottom:2.5rem;}
+  .work-sub{text-align:left;max-width:100%;}
+  .work-title{font-size:2.5rem;}
+  .projects{display:flex;flex-direction:column;gap:3px;}
+  .project{aspect-ratio:4/3 !important;}
+  .project-info{opacity:1;transform:none;}
+  .project-overlay{background:rgba(10,10,10,0.6);}
+  .project-name{font-size:1.2rem;}
+  .project-open{display:none;}
+  .project-desc{display:none;}
+
+  /* SERVICES */
+  .services{padding:4rem 1.5rem;}
+  .services-title{font-size:2.5rem;}
+  .service-item{grid-template-columns:50px 1fr auto;gap:1rem;padding:1.5rem 0;}
+  .service-desc{display:none;}
+  .service-name{font-size:1.1rem;}
+
+  /* PROCESS */
+  .process{padding:4rem 1.5rem;}
+  .process-header{flex-direction:column;align-items:flex-start;gap:1rem;margin-bottom:3rem;}
+  .process-sub{text-align:left;max-width:100%;}
+  .process-title{font-size:2.5rem;}
+  .process-steps{grid-template-columns:1fr;gap:2.5rem;}
+  .process-steps::before{display:none;}
+  .step{padding:0;}
+  .step-dot{margin-bottom:1rem;}
+
+  /* BEFORE/AFTER */
+  .ba-section{padding:4rem 1.5rem;}
+  .ba-title{font-size:2rem;}
+  .ba-before,.ba-after{grid-template-columns:1fr;gap:2rem;padding:1.5rem;}
+  .ba-after-screen,.ba-before-screen{aspect-ratio:16/7;}
+
+  /* ABOUT */
+  .about{padding:4rem 1.5rem;grid-template-columns:1fr;gap:2.5rem;}
+  .about-big-j{font-size:30vw;top:-1rem;left:-1rem;}
+  .about-title{font-size:2.2rem;}
+  .about-card{padding:1.25rem;}
+
+  /* FAQ */
+  .faq-section{padding:4rem 1.5rem;}
+  .faq-title{font-size:2rem;}
+  .faq-q-text{font-size:0.95rem;}
+
+  /* TESTIMONIALS */
+  .testi-section{padding:4rem 1.5rem;}
+  .testi-title{font-size:2rem;}
+  .testi-grid{grid-template-columns:1fr;}
+  .testi-card{padding:1.75rem;}
+
+  /* CONTACT */
+  .contact{padding:4rem 1.5rem;}
+  .contact-bg-text{font-size:20vw;}
+  .contact-inner{grid-template-columns:1fr;gap:3rem;}
+  .contact-title{font-size:2.5rem;}
+  .form-submit{width:100%;justify-content:center;}
+
+  /* PANEL */
+  .panel{width:100%;border-left:none;border-top:1px solid var(--border);}
+
+  /* FOOTER */
+  footer{flex-direction:column;gap:1rem;padding:2rem 1.5rem;text-align:center;}
+  .footer-links a{margin-left:1rem;}
+  .footer-links a:first-child{margin-left:0;}
+
+  /* FLOATING CTA */
+  .float-btn{padding:0.75rem 1.25rem;font-size:0.7rem;}
+
+  /* LANG TOGGLE in nav — hide on mobile (use mobile menu instead) */
+  .lang-toggle{display:none;}
+}
 </style>
 </head>
 <body>
 <div id="cur"></div>
 <div id="cur-ring"></div>
+
+<!-- FLOATING CTA -->
+<div class="float-cta" id="floatCta">
+  <a href="#contact" class="float-btn">
+    <div class="float-dot"></div>
+    <span data-i18n="float.cta">Start a project</span>
+  </a>
+</div>
 
 <!-- SERVICE PANEL -->
 <div class="panel-overlay" id="panelOverlay" onclick="closePanel()"></div>
@@ -311,7 +542,23 @@ footer{padding:2rem 3rem;display:flex;align-items:center;justify-content:space-b
       <button class="lang-btn" onclick="setLang('de')">DE</button>
     </div>
   </div>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#work" onclick="toggleMenu()" data-i18n="nav.work">Work</a>
+  <a href="#services" onclick="toggleMenu()" data-i18n="nav.services">Services</a>
+  <a href="#about" onclick="toggleMenu()" data-i18n="nav.about">About</a>
+  <a href="#contact" onclick="toggleMenu()" data-i18n="nav.contact">Contact</a>
+  <div class="mobile-lang">
+    <button class="active" onclick="setLang('en');toggleMenu()">EN</button>
+    <button onclick="setLang('fr');toggleMenu()">FR</button>
+    <button onclick="setLang('de');toggleMenu()">DE</button>
+  </div>
+</div>
 
 <section class="hero">
   <div class="hero-bg-num">V</div>
@@ -448,6 +695,182 @@ footer{padding:2rem 3rem;display:flex;align-items:center;justify-content:space-b
   </div>
 </section>
 
+<!-- PROCESS -->
+<section class="process" id="process">
+  <div class="process-inner">
+    <div class="process-header reveal">
+      <div class="process-header-left">
+        <span class="process-label" data-i18n="process.label">How it works</span>
+        <h2 class="process-title" data-i18n="process.title">From zero<br>to live.</h2>
+      </div>
+      <p class="process-sub" data-i18n="process.sub">A simple, transparent process. No long briefs, no delays, no surprises.</p>
+    </div>
+    <div class="process-steps">
+      <div class="step reveal">
+        <div class="step-dot"><span class="step-num">01</span></div>
+        <h3 class="step-title" data-i18n="step1.title">I find you</h3>
+        <p class="step-desc" data-i18n="step1.desc">I research your business online and identify exactly what's missing from your digital presence. Then I reach out with a first draft already built.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-dot"><span class="step-num">02</span></div>
+        <h3 class="step-title" data-i18n="step2.title">We align</h3>
+        <p class="step-desc" data-i18n="step2.desc">You review the draft, share your feedback, and we align on structure, content and style. One clear conversation, no back-and-forth for months.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-dot"><span class="step-num">03</span></div>
+        <h3 class="step-title" data-i18n="step3.title">I build it</h3>
+        <p class="step-desc" data-i18n="step3.desc">I finalise the design, write all the copy, set up the domain and hosting. You don't need to touch a single thing.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-dot"><span class="step-num">04</span></div>
+        <h3 class="step-title" data-i18n="step4.title">You go live</h3>
+        <p class="step-desc" data-i18n="step4.desc">Your site is live and findable on Google. Customers can finally find you. Optionally, we set up a maintenance plan to keep everything current.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BEFORE / AFTER -->
+<section class="ba-section">
+  <div class="ba-inner">
+    <div class="ba-header reveal">
+      <span class="ba-label" data-i18n="ba.label">The difference</span>
+      <h2 class="ba-title" data-i18n="ba.title">Before Visivo.<br>After Visivo.</h2>
+    </div>
+    <div class="reveal">
+      <div class="ba-toggle-wrap">
+        <button class="ba-tab active" onclick="setBA('before')" data-i18n="ba.before">Before</button>
+        <button class="ba-tab" onclick="setBA('after')" data-i18n="ba.after">After</button>
+      </div>
+      <div class="ba-panels">
+        <div class="ba-panel active" id="ba-before">
+          <div class="ba-before">
+            <div class="ba-before-left">
+              <span class="ba-before-tag" data-i18n="ba.before_tag">Without a website</span>
+              <h3 class="ba-before-title" data-i18n="ba.before_title">You exist — but no one knows it.</h3>
+              <p class="ba-before-desc" data-i18n="ba.before_desc">Customers search for your type of business online. They find your competitors — with websites, photos, reviews, booking forms. They never see you. You lose the client before you even had a chance.</p>
+              <div class="ba-diff" style="margin-top:1.5rem;">
+                <div class="ba-diff-item" style="color:rgba(245,242,238,0.3);border-color:rgba(245,242,238,0.08);" data-i18n="ba.b1">No online presence</div>
+                <div class="ba-diff-item" style="color:rgba(245,242,238,0.3);border-color:rgba(245,242,238,0.08);" data-i18n="ba.b2">Hard to contact</div>
+                <div class="ba-diff-item" style="color:rgba(245,242,238,0.3);border-color:rgba(245,242,238,0.08);" data-i18n="ba.b3">Zero Google visibility</div>
+              </div>
+            </div>
+            <div class="ba-before-screen">
+              <div class="ba-map-dot">📍</div>
+              <div class="ba-map-info">
+                <div class="ba-map-name" data-i18n="ba.biz_name">Your Business</div>
+                <div class="ba-map-addr" data-i18n="ba.biz_addr">12 Rue Exemple, Bordeaux</div>
+                <div class="ba-map-rating">★★★★★ · Google Maps</div>
+                <div class="ba-map-no-site" data-i18n="ba.no_site">No website</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ba-panel" id="ba-after">
+          <div class="ba-after">
+            <div>
+              <span class="ba-after-tag" data-i18n="ba.after_tag">With a Visivo site</span>
+              <h3 class="ba-after-title" data-i18n="ba.after_title">Customers find you. They trust you. They contact you.</h3>
+              <p class="ba-after-desc" data-i18n="ba.after_desc">Your new site ranks in Google searches for your area. Visitors see exactly what you offer, can contact you in one click, and trust you before picking up the phone. New clients every week.</p>
+              <div class="ba-diff">
+                <div class="ba-diff-item" data-i18n="ba.a1">Findable on Google</div>
+                <div class="ba-diff-item" data-i18n="ba.a2">Professional credibility</div>
+                <div class="ba-diff-item" data-i18n="ba.a3">Direct enquiries</div>
+              </div>
+            </div>
+            <div class="ba-after-screen">
+              <div class="ba-site-mock">
+                <div class="ba-site-nav">
+                  <div class="ba-site-logo">YOUR BIZ</div>
+                  <div class="ba-site-links"><div class="ba-site-link">Services</div><div class="ba-site-link">About</div><div class="ba-site-link" style="color:var(--orange);">Contact</div></div>
+                </div>
+                <div class="ba-site-hero">
+                  <div class="ba-site-h1">The best<br><em>in Bordeaux.</em></div>
+                </div>
+                <div class="ba-site-bottom">
+                  <div class="ba-site-card"><div class="ba-site-card-t">Services</div></div>
+                  <div class="ba-site-card"><div class="ba-site-card-t">Reviews</div></div>
+                  <div class="ba-site-card" style="background:rgba(255,92,58,0.15);"><div class="ba-site-card-t" style="color:var(--orange);">Contact</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="faq-inner">
+    <div class="faq-header reveal">
+      <span class="faq-label" data-i18n="faq.label">FAQ</span>
+      <h2 class="faq-title" data-i18n="faq.title">Questions you<br>probably have.</h2>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q"><span class="faq-q-text" data-i18n="faq.q1">How long does it take to build my site?</span><div class="faq-icon">+</div></div>
+        <div class="faq-a"><p class="faq-a-inner" data-i18n="faq.a1">For most projects, you'll receive a first draft within 3 to 7 days of our first conversation. Final delivery including domain and hosting setup is typically within 2 weeks. No months-long agency timelines.</p></div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q"><span class="faq-q-text" data-i18n="faq.q2">What do I need to prepare before we start?</span><div class="faq-icon">+</div></div>
+        <div class="faq-a"><p class="faq-a-inner" data-i18n="faq.a2">Almost nothing. I research your business using publicly available information and build a first draft for you to react to. If you have a logo or specific photos, great — but it's not required to get started.</p></div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q"><span class="faq-q-text" data-i18n="faq.q3">Do I own the website after delivery?</span><div class="faq-icon">+</div></div>
+        <div class="faq-a"><p class="faq-a-inner" data-i18n="faq.a3">Yes, completely. Once the project is complete and paid, the website and all its content belong to you entirely. The domain is registered in your name and you have full access to everything.</p></div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q"><span class="faq-q-text" data-i18n="faq.q4">What if I need changes after launch?</span><div class="faq-icon">+</div></div>
+        <div class="faq-a"><p class="faq-a-inner" data-i18n="faq.a4">Small changes in the weeks after launch are included. For ongoing updates — new services, seasonal changes, new photos — we can set up a maintenance plan. Flexible and discussed based on your actual needs, no fixed packages.</p></div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q"><span class="faq-q-text" data-i18n="faq.q5">Do you work with businesses outside France?</span><div class="faq-icon">+</div></div>
+        <div class="faq-a"><p class="faq-a-inner" data-i18n="faq.a5">Absolutely. I work fully remotely and collaborate with businesses across France, Belgium, the Netherlands, Germany and beyond. Everything is handled online — no in-person meetings required.</p></div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q"><span class="faq-q-text" data-i18n="faq.q6">What languages can the website be in?</span><div class="faq-icon">+</div></div>
+        <div class="faq-a"><p class="faq-a-inner" data-i18n="faq.a6">I write copy in French, English and German. If your business serves multiple markets, I can build a multilingual site. Just mention it when you get in touch.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testi-section">
+  <div class="testi-inner">
+    <div class="testi-header reveal">
+      <span class="testi-label" data-i18n="testi.label">What clients say</span>
+      <h2 class="testi-title" data-i18n="testi.title">Results that<br>speak for themselves.</h2>
+    </div>
+    <div class="testi-grid reveal">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote" data-i18n="t1.quote">"We had a Google listing and nothing else. JP built us a proper site in days — our booking rate doubled within six weeks. Best decision we made this year."</p>
+        <div class="testi-divider"></div>
+        <div class="testi-name" data-i18n="t1.name">Camille Rousseau</div>
+        <div class="testi-role" data-i18n="t1.role">Owner · Atelier Camille, Lyon</div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote" data-i18n="t2.quote">"I didn't know what to expect but JP sent me a first draft without asking for anything upfront. I was impressed. The site looks more professional than businesses twice our size."</p>
+        <div class="testi-divider"></div>
+        <div class="testi-name" data-i18n="t2.name">Nadia El Fassi</div>
+        <div class="testi-role" data-i18n="t2.role">Founder · Nadia Skin Studio, Brussels</div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote" data-i18n="t3.quote">"As a plumber, I never thought I needed a website. JP explained exactly why I was losing work — three weeks after the site went live, I had more requests than I could handle."</p>
+        <div class="testi-divider"></div>
+        <div class="testi-name" data-i18n="t3.name">Marco Verhoeven</div>
+        <div class="testi-role" data-i18n="t3.role">Owner · Verhoeven Loodgieter, Utrecht</div>
+      </div>
+    </div>
+    <p class="testi-note" data-i18n="testi.note">* These are illustrative testimonials — to be replaced with real client feedback.</p>
+  </div>
+</section>
+
 <section class="contact" id="contact">
   <div class="contact-bg-text">VISIVO</div>
   <div class="contact-inner">
@@ -471,8 +894,11 @@ footer{padding:2rem 3rem;display:flex;align-items:center;justify-content:space-b
 
 <footer>
   <div class="footer-logo">Visivo</div>
-  <div class="footer-copy">© 2024 Visivo · JP · All rights reserved</div>
-  <div class="footer-links"><a href="#work">Work</a><a href="#contact">Contact</a></div>
+  <div>
+    <div class="footer-copy" data-i18n="footer.copy">© 2024 Visivo · JP · All rights reserved</div>
+    <div class="footer-privacy" data-i18n="footer.privacy">No tracking · No cookies · No ads</div>
+  </div>
+  <div class="footer-links"><a href="#work" data-i18n="nav.work">Work</a><a href="#faq">FAQ</a><a href="#contact" data-i18n="nav.contact">Contact</a></div>
 </footer>
 
 <script>
@@ -538,7 +964,35 @@ const translations = {
     'form.opt1':'Restaurant / Food & Drink','form.opt2':'Beauty / Hair / Wellness',
     'form.opt3':'Florist / Boutique','form.opt4':'Contractor / Tradesperson',
     'form.opt5':'Interior Design','form.opt6':'Retail / Shop','form.opt7':'Other',
-    'footer.copy':'© 2024 Visivo · JP · All rights reserved'
+    'footer.copy':'© 2024 Visivo · JP · All rights reserved',
+    'footer.privacy':'No tracking · No cookies · No ads',
+    'float.cta':'Start a project',
+    'process.label':'How it works','process.title':'From zero<br>to live.','process.sub':'A simple, transparent process. No long briefs, no delays, no surprises.',
+    'step1.title':'I find you','step1.desc':'I research your business online and identify what\'s missing from your digital presence. Then I reach out with a first draft already built.',
+    'step2.title':'We align','step2.desc':'You review the draft, share your feedback, and we align on structure, content and style. One clear conversation.',
+    'step3.title':'I build it','step3.desc':'I finalise the design, write all the copy, set up the domain and hosting. You don\'t need to touch a single thing.',
+    'step4.title':'You go live','step4.desc':'Your site is live and findable on Google. Customers can finally find you. Optionally, we set up a maintenance plan.',
+    'ba.label':'The difference','ba.title':'Before Visivo.<br>After Visivo.',
+    'ba.before':'Before','ba.after':'After',
+    'ba.before_tag':'Without a website','ba.before_title':'You exist — but no one knows it.',
+    'ba.before_desc':'Customers search for your type of business online. They find your competitors. They never see you. You lose the client before you even had a chance.',
+    'ba.b1':'No online presence','ba.b2':'Hard to contact','ba.b3':'Zero Google visibility',
+    'ba.biz_name':'Your Business','ba.biz_addr':'12 Rue Exemple, Bordeaux','ba.no_site':'No website',
+    'ba.after_tag':'With a Visivo site','ba.after_title':'Customers find you. They trust you. They contact you.',
+    'ba.after_desc':'Your new site ranks in Google searches for your area. Visitors see what you offer, can contact you in one click, and trust you before picking up the phone.',
+    'ba.a1':'Findable on Google','ba.a2':'Professional credibility','ba.a3':'Direct enquiries',
+    'faq.label':'FAQ','faq.title':'Questions you<br>probably have.',
+    'faq.q1':'How long does it take to build my site?','faq.a1':'For most projects, you\'ll receive a first draft within 3 to 7 days. Final delivery including domain and hosting setup is typically within 2 weeks.',
+    'faq.q2':'What do I need to prepare before we start?','faq.a2':'Almost nothing. I research your business using publicly available information and build a first draft for you to react to. If you have a logo or photos, great — but not required.',
+    'faq.q3':'Do I own the website after delivery?','faq.a3':'Yes, completely. Once the project is complete and paid, the website and all its content belong to you entirely. The domain is registered in your name.',
+    'faq.q4':'What if I need changes after launch?','faq.a4':'Small changes in the weeks after launch are included. For ongoing updates, we can set up a flexible maintenance plan based on your actual needs.',
+    'faq.q5':'Do you work with businesses outside France?','faq.a5':'Absolutely. I work fully remotely with businesses across France, Belgium, the Netherlands, Germany and beyond. Everything is handled online.',
+    'faq.q6':'What languages can the website be in?','faq.a6':'I write copy in French, English and German. If your business serves multiple markets, I can build a multilingual site.',
+    'testi.label':'What clients say','testi.title':'Results that<br>speak for themselves.',
+    't1.quote':'"We had a Google listing and nothing else. JP built us a proper site in days — our booking rate doubled within six weeks. Best decision we made this year."','t1.name':'Camille Rousseau','t1.role':'Owner · Atelier Camille, Lyon',
+    't2.quote':'"I didn\'t know what to expect but JP sent me a first draft without asking for anything upfront. The site looks more professional than businesses twice our size."','t2.name':'Nadia El Fassi','t2.role':'Founder · Nadia Skin Studio, Brussels',
+    't3.quote':'"As a plumber, I never thought I needed a website. JP explained exactly why I was losing work — three weeks after the site went live, I had more requests than I could handle."','t3.name':'Marco Verhoeven','t3.role':'Owner · Verhoeven Loodgieter, Utrecht',
+    'testi.note':'* These are illustrative testimonials — to be replaced with real client feedback.'
   },
   fr: {
     'nav.work':'Travaux','nav.services':'Services','nav.about':'À propos','nav.contact':'Contact',
@@ -579,7 +1033,35 @@ const translations = {
     'form.opt1':'Restaurant / Alimentation','form.opt2':'Beauté / Coiffure / Bien-être',
     'form.opt3':'Fleuriste / Boutique','form.opt4':'Artisan / Prestataire',
     'form.opt5':'Design d\'intérieur','form.opt6':'Commerce / Magasin','form.opt7':'Autre',
-    'footer.copy':'© 2024 Visivo · JP · Tous droits réservés'
+    'footer.copy':'© 2024 Visivo · JP · Tous droits réservés',
+    'footer.privacy':'Aucun suivi · Aucun cookie · Aucune pub',
+    'float.cta':'Démarrer un projet',
+    'process.label':'Comment ça marche','process.title':'De zéro<br>à en ligne.','process.sub':'Un processus simple et transparent. Pas de brief interminable, pas de délais, pas de surprises.',
+    'step1.title':'Je vous trouve','step1.desc':'Je recherche votre entreprise en ligne et identifie ce qui manque dans votre présence digitale. Je vous contacte ensuite avec une première ébauche déjà construite.',
+    'step2.title':'On s\'aligne','step2.desc':'Vous examinez l\'ébauche, partagez vos retours et on s\'aligne sur la structure, le contenu et le style. Une seule conversation claire.',
+    'step3.title':'Je construis','step3.desc':'Je finalise le design, rédige tous les textes, configure le domaine et l\'hébergement. Vous n\'avez pas besoin de toucher quoi que ce soit.',
+    'step4.title':'Vous êtes en ligne','step4.desc':'Votre site est en ligne et trouvable sur Google. Vos clients peuvent enfin vous trouver. En option, on met en place un plan de maintenance.',
+    'ba.label':'La différence','ba.title':'Avant Visivo.<br>Après Visivo.',
+    'ba.before':'Avant','ba.after':'Après',
+    'ba.before_tag':'Sans site web','ba.before_title':'Vous existez — mais personne ne le sait.',
+    'ba.before_desc':'Les clients cherchent votre type d\'activité en ligne. Ils trouvent vos concurrents — avec des sites, des photos, des avis, des formulaires. Ils ne vous voient jamais.',
+    'ba.b1':'Aucune présence en ligne','ba.b2':'Difficile à contacter','ba.b3':'Zéro visibilité Google',
+    'ba.biz_name':'Votre Entreprise','ba.biz_addr':'12 Rue Exemple, Bordeaux','ba.no_site':'Pas de site web',
+    'ba.after_tag':'Avec un site Visivo','ba.after_title':'Les clients vous trouvent. Ils vous font confiance. Ils vous contactent.',
+    'ba.after_desc':'Votre nouveau site apparaît dans les recherches Google de votre zone. Les visiteurs voient exactement ce que vous proposez et peuvent vous contacter en un clic.',
+    'ba.a1':'Trouvable sur Google','ba.a2':'Crédibilité professionnelle','ba.a3':'Demandes directes',
+    'faq.label':'FAQ','faq.title':'Les questions que<br>vous vous posez.',
+    'faq.q1':'Combien de temps faut-il pour créer mon site ?','faq.a1':'Pour la plupart des projets, vous recevrez une première ébauche sous 3 à 7 jours. La livraison finale incluant le domaine et l\'hébergement se fait généralement en 2 semaines.',
+    'faq.q2':'Que dois-je préparer avant de commencer ?','faq.a2':'Presque rien. Je recherche votre entreprise à partir d\'informations publiques et construis une ébauche pour que vous puissiez réagir. Si vous avez un logo ou des photos, c\'est bien — mais pas obligatoire.',
+    'faq.q3':'Suis-je propriétaire du site après la livraison ?','faq.a3':'Oui, entièrement. Une fois le projet terminé et réglé, le site et tout son contenu vous appartiennent. Le domaine est enregistré à votre nom.',
+    'faq.q4':'Et si j\'ai besoin de modifications après le lancement ?','faq.a4':'Les petites modifications dans les semaines suivant le lancement sont incluses. Pour les mises à jour régulières, on peut mettre en place un plan de maintenance flexible selon vos besoins.',
+    'faq.q5':'Travaillez-vous avec des entreprises hors de France ?','faq.a5':'Absolument. Je travaille entièrement à distance avec des entreprises en France, Belgique, aux Pays-Bas, en Allemagne et au-delà.',
+    'faq.q6':'Dans quelles langues peut être le site ?','faq.a6':'Je rédige les textes en français, anglais et allemand. Si votre activité touche plusieurs marchés, je peux construire un site multilingue.',
+    'testi.label':'Ce que disent les clients','testi.title':'Des résultats qui<br>parlent d\'eux-mêmes.',
+    't1.quote':'"On avait une fiche Google et rien d\'autre. JP nous a construit un vrai site en quelques jours — notre taux de réservation a doublé en six semaines. Meilleure décision de l\'année."','t1.name':'Camille Rousseau','t1.role':'Propriétaire · Atelier Camille, Lyon',
+    't2.quote':'"Je ne savais pas trop à quoi m\'attendre mais JP m\'a envoyé une première ébauche sans rien demander à l\'avance. Le site est plus professionnel que des entreprises deux fois plus grandes que nous."','t2.name':'Nadia El Fassi','t2.role':'Fondatrice · Nadia Skin Studio, Bruxelles',
+    't3.quote':'"En tant que plombier, je ne pensais pas avoir besoin d\'un site. JP m\'a expliqué exactement pourquoi je perdais des clients — trois semaines après la mise en ligne, j\'avais plus de demandes que je ne pouvais en traiter."','t3.name':'Marco Verhoeven','t3.role':'Propriétaire · Verhoeven Loodgieter, Utrecht',
+    'testi.note':'* Ces témoignages sont illustratifs — à remplacer par de vrais retours clients.'
   },
   de: {
     'nav.work':'Arbeiten','nav.services':'Leistungen','nav.about':'Über uns','nav.contact':'Kontakt',
@@ -620,7 +1102,35 @@ const translations = {
     'form.opt1':'Restaurant / Gastronomie','form.opt2':'Beauty / Haare / Wellness',
     'form.opt3':'Florist / Boutique','form.opt4':'Handwerker / Auftragnehmer',
     'form.opt5':'Innenarchitektur','form.opt6':'Einzelhandel / Geschäft','form.opt7':'Sonstiges',
-    'footer.copy':'© 2024 Visivo · JP · Alle Rechte vorbehalten'
+    'footer.copy':'© 2024 Visivo · JP · Alle Rechte vorbehalten',
+    'footer.privacy':'Kein Tracking · Keine Cookies · Keine Werbung',
+    'float.cta':'Projekt starten',
+    'process.label':'So funktioniert es','process.title':'Von null<br>zu live.','process.sub':'Ein einfacher, transparenter Prozess. Keine langen Briefings, keine Verzögerungen, keine Überraschungen.',
+    'step1.title':'Ich finde Sie','step1.desc':'Ich recherchiere Ihr Unternehmen online und identifiziere, was in Ihrer digitalen Präsenz fehlt. Dann melde ich mich mit einem bereits erstellten ersten Entwurf.',
+    'step2.title':'Wir stimmen uns ab','step2.desc':'Sie prüfen den Entwurf, teilen Ihr Feedback und wir einigen uns auf Struktur, Inhalt und Stil. Ein klares Gespräch.',
+    'step3.title':'Ich baue es','step3.desc':'Ich finalisiere das Design, schreibe alle Texte, richte Domain und Hosting ein. Sie müssen nichts anfassen.',
+    'step4.title':'Sie gehen live','step4.desc':'Ihre Website ist live und bei Google auffindbar. Kunden können Sie endlich finden. Optional richten wir einen Wartungsplan ein.',
+    'ba.label':'Der Unterschied','ba.title':'Vor Visivo.<br>Nach Visivo.',
+    'ba.before':'Vorher','ba.after':'Nachher',
+    'ba.before_tag':'Ohne Website','ba.before_title':'Sie existieren — aber niemand weiß es.',
+    'ba.before_desc':'Kunden suchen online nach Ihrer Art von Unternehmen. Sie finden Ihre Mitbewerber — mit Websites, Fotos, Bewertungen. Sie sehen Sie nie.',
+    'ba.b1':'Keine Online-Präsenz','ba.b2':'Schwer erreichbar','ba.b3':'Keine Google-Sichtbarkeit',
+    'ba.biz_name':'Ihr Unternehmen','ba.biz_addr':'Musterstraße 12, Bordeaux','ba.no_site':'Keine Website',
+    'ba.after_tag':'Mit einer Visivo-Website','ba.after_title':'Kunden finden Sie. Sie vertrauen Ihnen. Sie kontaktieren Sie.',
+    'ba.after_desc':'Ihre neue Website erscheint in Google-Suchanfragen für Ihre Region. Besucher sehen genau, was Sie anbieten, und können Sie mit einem Klick kontaktieren.',
+    'ba.a1':'Bei Google auffindbar','ba.a2':'Professionelle Glaubwürdigkeit','ba.a3':'Direkte Anfragen',
+    'faq.label':'FAQ','faq.title':'Fragen, die Sie<br>wahrscheinlich haben.',
+    'faq.q1':'Wie lange dauert es, meine Website zu erstellen?','faq.a1':'Für die meisten Projekte erhalten Sie innerhalb von 3 bis 7 Tagen einen ersten Entwurf. Die endgültige Lieferung einschließlich Domain- und Hosting-Einrichtung erfolgt in der Regel innerhalb von 2 Wochen.',
+    'faq.q2':'Was muss ich vorbereiten, bevor wir beginnen?','faq.a2':'Fast nichts. Ich recherchiere Ihr Unternehmen anhand öffentlich verfügbarer Informationen und erstelle einen ersten Entwurf. Wenn Sie ein Logo oder Fotos haben, gut — aber nicht erforderlich.',
+    'faq.q3':'Gehört mir die Website nach der Lieferung?','faq.a3':'Ja, vollständig. Sobald das Projekt abgeschlossen und bezahlt ist, gehören die Website und alle ihre Inhalte Ihnen. Die Domain ist auf Ihren Namen registriert.',
+    'faq.q4':'Was ist, wenn ich nach dem Launch Änderungen benötige?','faq.a4':'Kleine Änderungen in den Wochen nach dem Launch sind inbegriffen. Für laufende Updates können wir einen flexiblen Wartungsplan einrichten.',
+    'faq.q5':'Arbeiten Sie auch mit Unternehmen außerhalb Frankreichs?','faq.a5':'Absolut. Ich arbeite vollständig remote mit Unternehmen in Frankreich, Belgien, den Niederlanden, Deutschland und darüber hinaus.',
+    'faq.q6':'In welchen Sprachen kann die Website sein?','faq.a6':'Ich schreibe Texte auf Französisch, Englisch und Deutsch. Wenn Ihr Unternehmen mehrere Märkte bedient, kann ich eine mehrsprachige Website erstellen.',
+    'testi.label':'Was Kunden sagen','testi.title':'Ergebnisse, die<br>für sich sprechen.',
+    't1.quote':'"Wir hatten einen Google-Eintrag und nichts weiter. JP hat uns in wenigen Tagen eine richtige Website gebaut — unsere Buchungsrate verdoppelte sich innerhalb von sechs Wochen."','t1.name':'Camille Rousseau','t1.role':'Inhaberin · Atelier Camille, Lyon',
+    't2.quote':'"Ich wusste nicht, was ich erwarten sollte, aber JP schickte mir einen ersten Entwurf ohne vorherige Zahlung. Die Website wirkt professioneller als Unternehmen, die doppelt so groß sind."','t2.name':'Nadia El Fassi','t2.role':'Gründerin · Nadia Skin Studio, Brüssel',
+    't3.quote':'"Als Klempner dachte ich nie, ich brauche eine Website. JP erklärte mir genau, warum ich Aufträge verlor — drei Wochen nach der Veröffentlichung hatte ich mehr Anfragen als ich bewältigen konnte."','t3.name':'Marco Verhoeven','t3.role':'Inhaber · Verhoeven Loodgieter, Utrecht',
+    'testi.note':'* Diese Testimonials sind illustrativ — durch echte Kundenbewertungen zu ersetzen.'
   }
 };
 
@@ -637,8 +1147,8 @@ function setLang(lang) {
     const key = el.getAttribute('data-i18n-placeholder');
     if(t[key] !== undefined) el.placeholder = t[key];
   });
-  // Update lang buttons
-  document.querySelectorAll('.lang-btn').forEach(btn => {
+  // Update lang buttons (desktop + mobile)
+  document.querySelectorAll('.lang-btn, .mobile-lang button').forEach(btn => {
     btn.classList.toggle('active', btn.textContent.toLowerCase() === lang);
   });
   // Update panels with new lang
@@ -696,9 +1206,53 @@ function openPanel(key){
   document.body.style.overflow='hidden';
 }
 
-// Cursor
+function closePanel(){
+  document.getElementById('panel').classList.remove('open');
+  document.getElementById('panelOverlay').classList.remove('open');
+  document.body.style.overflow='';
+}
+function closePreview(){
+  document.getElementById('previewOverlay').classList.remove('open');
+  document.body.style.overflow='';
+  setTimeout(()=>{document.getElementById('previewFrame').srcdoc='about:blank';},400);
+}
+
+// Mobile menu
+function toggleMenu(){
+  const h = document.getElementById('hamburger');
+  const m = document.getElementById('mobileMenu');
+  h.classList.toggle('open');
+  m.classList.toggle('open');
+  document.body.style.overflow = m.classList.contains('open') ? 'hidden' : '';
+}
+
+// FAQ toggle
+function toggleFaq(el){
+  const isOpen = el.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+  if(!isOpen) el.classList.add('open');
+}
+
+// Before/After toggle
+function setBA(state){
+  document.querySelectorAll('.ba-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.ba-tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('ba-'+state).classList.add('active');
+  event.target.classList.add('active');
+}
+
+// Floating CTA
+const floatCta = document.getElementById('floatCta');
+const heroSection = document.querySelector('.hero');
+window.addEventListener('scroll', ()=>{
+  const heroBottom = heroSection.getBoundingClientRect().bottom;
+  floatCta.classList.toggle('visible', heroBottom < 0);
+});
+
+// Cursor — desktop only
 const cur=document.getElementById('cur'),ring=document.getElementById('cur-ring');
 let mx=0,my=0,rx=0,ry=0;
+if(window.matchMedia('(pointer:fine)').matches){
 document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx-3+'px';cur.style.top=my-3+'px';});
 function animRing(){rx+=(mx-rx-14)*0.12;ry+=(my-ry-14)*0.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(animRing);}
 animRing();
@@ -706,6 +1260,7 @@ document.querySelectorAll('a,button,.project,.service-item,.about-card').forEach
   el.addEventListener('mouseenter',()=>{cur.style.transform='scale(3)';ring.style.transform='scale(1.5)';ring.style.opacity='0.3';});
   el.addEventListener('mouseleave',()=>{cur.style.transform='scale(1)';ring.style.transform='scale(1)';ring.style.opacity='0.6';});
 });
+}
 
 // Nav
 const nav=document.getElementById('nav');
